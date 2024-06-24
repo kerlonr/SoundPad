@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sound Pad do Amor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>😍 VAI DA NAMORO 😍</h1>
+      <h2>TERCEIROES</h2>
+      <div class="pad-container" id="pad-container"></div>
+      <div class="volume-control">
+        <label for="master-volume">Volume Geral:</label>
+        <input
+          type="range"
+          id="master-volume"
+          min="0"
+          max="1"
+          step="0.1"
+          value="0.5"
+        />
+        <span id="volume-value">50</span>%
+      </div>
+      <button id="stop-all" class="stop-button">❌ Parar Todos</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

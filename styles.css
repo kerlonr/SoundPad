@@ -1,0 +1,78 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-image: url("background.png"); /* Corrigido: use 'url()' para especificar a imagem */
+  background-size: cover; /* Para cobrir todo o corpo */
+  background-position: center; /* Centraliza a imagem no corpo */
+  color: #ffffff;
+}
+
+.container {
+  text-align: center;
+  position: relative; /* Para permitir que a imagem de fundo seja visível atrás dos conteúdos */
+  z-index: 1; /* Garante que os conteúdos fiquem na frente do fundo */
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  color: #ffc0cb; /* Rosa claro */
+}
+
+.pad-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.pad {
+  background-color: rgba(255, 192, 203, 0.2); /* Rosa claro */
+  border: 2px solid rgba(255, 192, 203, 0.3);
+  border-radius: 15px;
+  padding: 20px;
+  font-size: 1.2em;
+  color: #ffc0cb; /* Rosa claro */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.pad:hover {
+  background-color: rgba(255, 192, 203, 0.4);
+  transform: scale(1.1);
+}
+
+.pad:active {
+  background-color: rgba(255, 192, 203, 0.6);
+  transform: scale(1.05);
+}
+
+.stop-button {
+  background-color: rgba(255, 0, 0, 0.8); /* Vermelho escuro */
+  border: 2px solid rgba(255, 0, 0, 0.9);
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+.stop-button:hover {
+  background-color: rgba(255, 0, 0, 1);
+  transform: scale(1.1);
+}
+
+.stop-button:active {
+  background-color: rgba(200, 0, 0, 1);
+  transform: scale(1.05);
+}
