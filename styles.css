@@ -1,3 +1,15 @@
+/* Reset de estilos padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start; /* Altera o alinhamento vertical para o início (flex-start) */
+  }
+}
+/* Estilos gerais para o corpo da página */
 body {
   display: flex;
   justify-content: center;
@@ -5,33 +17,69 @@ body {
   height: 100vh;
   margin: 0;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  background-image: url("background.png"); /* Corrigido: use 'url()' para especificar a imagem */
-  background-size: cover; /* Para cobrir todo o corpo */
-  background-position: center; /* Centraliza a imagem no corpo */
+  background-image: url("background.png"); /* Substitua pelo caminho da sua imagem de fundo */
+  background-size: cover;
+  background-position: center;
   color: #ffffff;
 }
 
+/* Estilos para o contêiner principal */
 .container {
-  text-align: center;
-  position: relative; /* Para permitir que a imagem de fundo seja visível atrás dos conteúdos */
-  z-index: 1; /* Garante que os conteúdos fiquem na frente do fundo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  padding: 20px;
+  gap: 2rem;
 }
 
-h1 {
-  font-size: 2.5em;
+/* Estilos para a seção de títulos */
+.title-section {
+  text-align: center;
   margin-bottom: 20px;
+}
+
+/* Estilos para o título principal */
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 10px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   color: #ffc0cb; /* Rosa claro */
 }
 
-.pad-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
-  justify-content: center;
-  margin-bottom: 20px;
+/* Estilos para o título secundário */
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #ffc0cb; /* Rosa claro */
 }
 
+/* Estilos para a imagem de coração */
+img {
+  max-width: 80px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Estilos para a seção de botões de áudio */
+.pad-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+  gap: 20px; /* Espaçamento entre os botões */
+  justify-content: center;
+  padding: 20px;
+  text-align: center; /* Centraliza o conteúdo dos botões */
+}
+.pad-container {
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* Estilos para cada botão de áudio */
 .pad {
   background-color: rgba(255, 192, 203, 0.2); /* Rosa claro */
   border: 2px solid rgba(255, 192, 203, 0.3);
@@ -54,6 +102,117 @@ h1 {
   transform: scale(1.05);
 }
 
+/* Estilos para a seção de controles (volume e parar) */
+.controls-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Estilos para o controle de volume */
+.volume-control {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.volume-control label {
+  display: block;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.volume-control input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.15s ease-in-out;
+  border-radius: 10px;
+}
+
+.volume-control input[type="range"]:hover {
+  opacity: 1;
+}
+
+.volume-control input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.volume-control input[type="range"]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 0px solid #000000;
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -5px;
+}
+
+.volume-control input[type="range"]:focus {
+  outline: none;
+}
+
+.volume-control input[type="range"]::-ms-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+.volume-control input[type="range"]::-ms-fill-lower {
+  background: #ffffff;
+  border: 0px solid #000000;
+  border-radius: 20px;
+  box-shadow: 0px 0px 0px #000000;
+}
+
+.volume-control input[type="range"]::-ms-fill-upper {
+  background: #ffffff;
+  border: 0px solid #000000;
+  border-radius: 20px;
+  box-shadow: 0px 0px 0px #000000;
+}
+
+.volume-control input[type="range"]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 0px 0px 0px #000000;
+  border: 0px solid #000000;
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.volume-control input[type="range"]:focus::-ms-fill-lower {
+  background: #ffffff;
+}
+
+.volume-control input[type="range"]:focus::-ms-fill-upper {
+  background: #ffffff;
+}
+
+/* Estilos para o valor do volume */
+#volume-value {
+  display: inline-block;
+  margin-left: 10px;
+  color: #ffffff;
+}
+
+/* Estilos para o botão de parar todos os sons */
 .stop-button {
   background-color: rgba(255, 0, 0, 0.8); /* Vermelho escuro */
   border: 2px solid rgba(255, 0, 0, 0.9);
